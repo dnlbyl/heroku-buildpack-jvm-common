@@ -3,7 +3,7 @@
 LATEST_JDK_VERSION="1.8"
 
 if [ ${STACK:-""} = "cedar" ]; then
-  DEFAULT_JDK_VERSION="1.6"
+  DEFAULT_JDK_VERSION="1.8"
   JDK_URL_1_8=${JDK_URL_1_8:-"http://lang-jvm.s3.amazonaws.com/jdk/openjdk1.8.0_20.tar.gz"}
   JDK_URL_1_7=${JDK_URL_1_7:-"http://lang-jvm.s3.amazonaws.com/jdk/openjdk1.7.0_55.tar.gz"}
   JDK_URL_1_6=${JDK_URL_1_6:-"http://lang-jvm.s3.amazonaws.com/jdk/openjdk1.6.0_27.tar.gz"}
@@ -110,11 +110,7 @@ is_supported_java_version() {
 }
 
 get_default_java_version() {
-  if [ ${STACK:-""} = "cedar" ]; then
-    echo "1.6"
-  else
-    echo "$DEFAULT_JDK_VERSION"
-  fi
+  echo "$DEFAULT_JDK_VERSION"
 }
 
 detect_java_version() {
